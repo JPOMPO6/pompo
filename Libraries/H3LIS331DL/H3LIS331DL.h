@@ -186,7 +186,7 @@ typedef struct H3LIS331DL_s
     
     uint8_t i2cAddress;
     AccelerometerData accelData;
-};
+} H3LIS331DL_t[1], *H3LIS331DL;
 
 void setAddr_H3LIS331DL(uint8_t i2cAddress);
 bool begin(void);
