@@ -1,7 +1,8 @@
 #ifndef _H3LIS331DL_H_
 #define _H3LIS331DL_H_
 
-#include "stdint.h"
+#include <stdint.h>
+#include <stdbool.h>
 
 /**************************************************************************
     I2C ADDRESS/BITS
@@ -186,9 +187,9 @@ typedef struct H3LIS331DL_s
     
     uint8_t i2cAddress;
     AccelerometerData accelData;
-} H3LIS331DL_t[1], *H3LIS331DL;
+} H3LIS331DL_t;
 
-void setAddr_H3LIS331DL(uint8_t i2cAddress);
+H3LIS331DL_t setAddr_H3LIS331DL(uint8_t i2cAddress);
 bool begin(void);
 void setupAccelerometer(void);
 void Measure_Accelerometer(void);
