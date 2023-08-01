@@ -1,5 +1,6 @@
 #include "H3LIS331DL.h"
 
+
 H3LIS331DL_t h3lis;
 
 /**************************************************************************/
@@ -15,14 +16,14 @@ H3LIS331DL_t setAddr_H3LIS331DL(uint8_t i2cAddress)
 
 /**************************************************************************/
 /*
-        Sets up the Hardware
+        Sets up the Hardware, it requires a preinitialized TWI(I2C) driver object
 */
 /**************************************************************************/
-bool begin()
+bool H3LIS331DL_begin(nrf_drv_twi_t m_twi)
 {
     // Wire.begin(); will be changed
 
-
+    h3lis.m_twi = m_twi;
     
     if (readRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_WHO_AM_I) != 0x32) return false;
     
@@ -30,7 +31,6 @@ bool begin()
     setUpAccelerometer();
     
     return true;
-
 }
 
 /**************************************************************************/

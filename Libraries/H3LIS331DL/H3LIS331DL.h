@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "nrf_drv_twi.h" // pca10040 nRF52832 device compatible
 
 /**************************************************************************
     I2C ADDRESS/BITS
@@ -183,14 +184,15 @@ typedef struct H3LIS331DL_s
     AccelerometerBlockData blockDataUpdate;
     AccelerometerEndianData endianData;
     AccelerometerRange accelRange;
-    AccelerometerSPIWire spiWire;
     
+    nrf_drv_twi_t m_twi;
+
     uint8_t i2cAddress;
     AccelerometerData accelData;
 } H3LIS331DL_t;
 
 H3LIS331DL_t setAddr_H3LIS331DL(uint8_t i2cAddress);
-bool begin(void);
+bool H3LIS331DL_begin(nrf_drv_twi_t m_twi);
 void setupAccelerometer(void);
 void Measure_Accelerometer(void);
 
@@ -220,5 +222,7 @@ AccelerometerRange getAccelRange(void);
 
 void setAccelSPIWire(AccelerometerSPIWire spiWire);
 AccelerometerSPIWire getAccelSPIWire(void);
+
+extern H3LIS331DL_t h3lis;
 
 #endif /*_H3LIS331DL_H_*/
