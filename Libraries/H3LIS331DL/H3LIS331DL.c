@@ -5,6 +5,33 @@ H3LIS331DL_t h3lis;
 
 /**************************************************************************/
 /*
+        Writes 8-bits to the specified destination register
+*/
+/**************************************************************************/
+static void writeRegister(uint8_t i2cAddress, uint8_t reg, uint8_t value)
+{
+    Wire.beginTransmission(i2cAddress);
+    i2cwrite((uint8_t)reg);
+    i2cwrite((uint8_t)(value));
+    Wire.endTransmission();
+}
+
+/**************************************************************************/
+/*
+        Reads 8-bits to the specified destination register
+*/
+/**************************************************************************/
+static uint8_t readRegister(uint8_t i2cAddress, uint8_t reg)
+{
+    Wire.beginTransmission(i2cAddress);
+    i2cwrite((uint8_t)reg);
+    Wire.endTransmission();
+    Wire.requestFrom(i2cAddress, (uint8_t)1);
+    return (uint8_t)(i2cread());
+}
+
+/**************************************************************************/
+/*
         Instantiates a new H3LIS331DL object with appropriate properties
 */
 /**************************************************************************/
@@ -28,7 +55,7 @@ bool H3LIS331DL_begin(nrf_drv_twi_t m_twi)
     if (readRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_WHO_AM_I) != 0x32) return false;
     
     // Set up the sensor for Accelerometer
-    setUpAccelerometer();
+    setupAccelerometer();
     
     return true;
 }
@@ -218,7 +245,7 @@ AccelerometerSPIWire getAccelSPIWire()
         Sets up the Accelerometer
 */
 /**************************************************************************/
-void setUpAccelerometer(void)
+void setupAccelerometer(void)
 {
     // Set Up the Configuration for the Accelerometer Control Register 1
     /*
