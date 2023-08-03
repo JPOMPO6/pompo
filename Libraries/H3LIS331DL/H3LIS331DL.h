@@ -184,39 +184,36 @@ typedef struct H3LIS331DL_s
     AccelerometerData accelData;
 } H3LIS331DL_t;
 
-static void writeRegister(uint8_t reg, uint8_t value);
-static uint8_t readRegister(uint8_t reg);
+static void H3LIS331DL_writeRegister(uint8_t reg, uint8_t value);
+static uint8_t H3LIS331DL_readRegister(uint8_t reg);
 
 H3LIS331DL_t setAddr_H3LIS331DL(uint8_t i2cAddress);
 bool H3LIS331DL_begin(const nrf_drv_twi_t *m_twi);
-void setupAccelerometer(void);
-void Measure_Accelerometer(void);
+void H3LIS331DL_setupAccelerometer(void);
+void H3LIS331DL_Measure_Accelerometer(void);
 
-void setAccelPowerMode(AccelerometerPowerMode powerMode);
-AccelerometerPowerMode getAccelPowerMode(void);
+void H3LIS331DL_setAccelPowerMode(AccelerometerPowerMode powerMode);
+AccelerometerPowerMode H3LIS331DL_getAccelPowerMode(void);
 
-void setAccelDataRate(AccelerometerDataRate dataRate);
-AccelerometerDataRate getAccelDataRate(void);
+void H3LIS331DL_setAccelDataRate(AccelerometerDataRate dataRate);
+AccelerometerDataRate H3LIS331DL_getAccelDataRate(void);
 
-void setAccelZen(AccelerometerEnableZ enableZ);
-AccelerometerEnableZ getAccelZen(void);
+void H3LIS331DL_setAccelZen(AccelerometerEnableZ enableZ);
+AccelerometerEnableZ H3LIS331DL_getAccelZen(void);
 
-void setAccelYen(AccelerometerEnableY enableY);
-AccelerometerEnableY getAccelYen(void);
+void H3LIS331DL_setAccelYen(AccelerometerEnableY enableY);
+AccelerometerEnableY H3LIS331DL_getAccelYen(void);
 
-void setAccelXen(AccelerometerEnableX enableX);
-AccelerometerEnableX getAccelXen(void);
+void H3LIS331DL_setAccelXen(AccelerometerEnableX enableX);
+AccelerometerEnableX H3LIS331DL_getAccelXen(void);
 
-void setAccelBlockData(AccelerometerBlockData blockDataUpdate);
-AccelerometerBlockData getAccelBlockData(void);
+void H3LIS331DL_setAccelBlockData(AccelerometerBlockData blockDataUpdate);
+AccelerometerBlockData H3LIS331DL_getAccelBlockData(void);
 
-void setAccelEndianData(AccelerometerEndianData endianData);
-AccelerometerEndianData getAccelEndianData(void);
+void H3LIS331DL_setAccelEndianData(AccelerometerEndianData endianData);
+AccelerometerEndianData H3LIS331DL_getAccelEndianData(void);
 
-void setAccelRange(AccelerometerRange accelRange);
-AccelerometerRange getAccelRange(void);
-
-
-extern H3LIS331DL_t h3lis;
+void H3LIS331DL_setAccelRange(AccelerometerRange accelRange);
+AccelerometerRange H3LIS331DL_getAccelRange(void);
 
 #endif /*_H3LIS331DL_H_*/
