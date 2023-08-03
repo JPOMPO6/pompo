@@ -230,25 +230,6 @@ AccelerometerRange getAccelRange()
     return h3lis.accelRange;
 }
 
-/**************************************************************************/
-/*
-        Sets the SPI Serial Interface Mode Selection
-*/
-/**************************************************************************/
-void setAccelSPIWire(AccelerometerSPIWire spiWire)
-{
-    h3lis.spiWire = spiWire;
-}
-
-/**************************************************************************/
-/*
-        Gets the SPI Serial Interface Mode Selection
-*/
-/**************************************************************************/
-AccelerometerSPIWire getAccelSPIWire()
-{
-    return h3lis.spiWire;
-}
 
 /**************************************************************************/
 /*
