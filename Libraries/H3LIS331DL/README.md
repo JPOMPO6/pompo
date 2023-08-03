@@ -1,6 +1,6 @@
-# Currently on development.
+# Development is done.
 
-# Not functional yet!
+# Not tested yet!
 
 # H3LIS331DL 3-Axis Linear Accelerometer Sensor Library (nRF52 Platform)
 
