@@ -8,7 +8,7 @@ H3LIS331DL_t h3lis;
         Writes 8-bits to the specified destination register
 */
 /**************************************************************************/
-static void writeRegister(uint8_t i2cAddress, uint8_t reg, uint8_t value)
+static void writeRegister(uint8_t reg, uint8_t value)
 {
     Wire.beginTransmission(i2cAddress);
     i2cwrite((uint8_t)reg);
@@ -271,7 +271,7 @@ void setupAccelerometer(void)
     config1 |= h3lis.dataRate;
         
     // Write the configuration to the Accelerometer Control Register 1
-    writeRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_CTRL_REG1, config1);
+    writeRegister(H3LIS331DL_REG_ACCEL_CTRL_REG1, config1);
     
     // Wait for the configuration to complete
     nrf_delay_ms(h3lis.conversionDelay);
@@ -296,7 +296,7 @@ void setupAccelerometer(void)
     config4 |= h3lis.accelRange;
         
     // Write the configuration to the Accelerometer Control Register 4
-    writeRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_CTRL_REG4, config4);
+    writeRegister(H3LIS331DL_REG_ACCEL_CTRL_REG4, config4);
     
     // Wait for the configuration to complete
     nrf_delay_ms(h3lis.conversionDelay);
@@ -314,25 +314,25 @@ void Measure_Accelerometer(void)
     
     // Read the Data
     // Reading the Low X-Axis Acceleration Data Register
-    xAccelLo = readRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_OUT_X_L);
+    xAccelLo = readRegister(H3LIS331DL_REG_ACCEL_OUT_X_L);
     // Reading the High X-Axis Acceleration Data Register
-    xAccelHi = readRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_OUT_X_H);
+    xAccelHi = readRegister(H3LIS331DL_REG_ACCEL_OUT_X_H);
     // Conversion of the result
     // 16-bit signed result for X-Axis Acceleration Data of H3LIS331DL
     h3lis.accelData.X = (int16_t)((xAccelHi << 8) | xAccelLo);
     
     // Reading the Low Y-Axis Acceleration Data Register
-    yAccelLo = readRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_OUT_Y_L);
+    yAccelLo = readRegister(H3LIS331DL_REG_ACCEL_OUT_Y_L);
     // Reading the High Y-Axis Acceleration Data Register
-    yAccelHi = readRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_OUT_Y_H);
+    yAccelHi = readRegister(H3LIS331DL_REG_ACCEL_OUT_Y_H);
     // Conversion of the result
     // 16-bit signed result for Y-Axis Acceleration Data of H3LIS331DL
     h3lis.accelData.Y = (int16_t)((yAccelHi << 8) | yAccelLo);
     
     // Reading the Low Z-Axis Acceleration Data Register
-    zAccelLo = readRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_OUT_Z_L);
+    zAccelLo = readRegister(H3LIS331DL_REG_ACCEL_OUT_Z_L);
     // Reading the High Z-Axis Acceleration Data Register
-    zAccelHi = readRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_OUT_Z_H);
+    zAccelHi = readRegister(H3LIS331DL_REG_ACCEL_OUT_Z_H);
     // Conversion of the result
     // 16-bit signed result for Z-Axis Acceleration Data of H3LIS331DL
     h3lis.accelData.Z = (int16_t)((zAccelHi << 8) | zAccelLo);

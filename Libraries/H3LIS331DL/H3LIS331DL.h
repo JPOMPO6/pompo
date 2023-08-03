@@ -190,6 +190,9 @@ typedef struct H3LIS331DL_s
     AccelerometerData accelData;
 } H3LIS331DL_t;
 
+static void writeRegister(uint8_t reg, uint8_t value);
+static uint8_t readRegister(uint8_t reg);
+
 H3LIS331DL_t setAddr_H3LIS331DL(uint8_t i2cAddress);
 bool H3LIS331DL_begin(const nrf_drv_twi_t *m_twi);
 void setupAccelerometer(void);
