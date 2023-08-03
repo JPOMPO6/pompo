@@ -10,10 +10,13 @@ H3LIS331DL_t h3lis;
 /**************************************************************************/
 static void writeRegister(uint8_t reg, uint8_t value)
 {
-    Wire.beginTransmission(i2cAddress);
-    i2cwrite((uint8_t)reg);
-    i2cwrite((uint8_t)(value));
-    Wire.endTransmission();
+    ret_code_t err_code;
+
+    uint8_t tx_data[2] = {reg, value};
+    err_code = nrf_drv_twi_tx(h3lis.m_twi, h3lis.i2cAddress, tx_data, sizeof(tx_data), false);
+    APP_ERROR_CHECK(err_code);
+
+    while (nrf_drv_twi_is_busy(h3lis.m_twi)) { }  // Wait for the I2C transfer to complete
 }
 
 /**************************************************************************/
@@ -23,11 +26,20 @@ static void writeRegister(uint8_t reg, uint8_t value)
 /**************************************************************************/
 static uint8_t readRegister(uint8_t reg)
 {
-    Wire.beginTransmission(i2cAddress);
-    i2cwrite((uint8_t)reg);
-    Wire.endTransmission();
-    Wire.requestFrom(i2cAddress, (uint8_t)1);
-    return (uint8_t)(i2cread());
+    ret_code_t err_code;
+
+    uint8_t rx_data;
+    err_code = nrf_drv_twi_tx(h3lis.m_twi, h3lis.i2cAddress, &reg, 1, true); // Send the register address
+    APP_ERROR_CHECK(err_code);
+
+    while (nrf_drv_twi_is_busy(h3lis.m_twi)) { } // Wait for the I2C transfer to complete
+
+    err_code = nrf_drv_twi_rx(h3lis.m_twi, h3lis.i2cAddress, &rx_data, 1); // Read 1 byte from the device
+    APP_ERROR_CHECK(err_code);
+
+    while (nrf_drv_twi_is_busy(h3lis.m_twi)) { } // Wait for the I2C transfer to complete
+
+    return rx_data;
 }
 
 /**************************************************************************/
@@ -48,11 +60,9 @@ H3LIS331DL_t setAddr_H3LIS331DL(uint8_t i2cAddress)
 /**************************************************************************/
 bool H3LIS331DL_begin(const nrf_drv_twi_t *m_twi)
 {
-    // Wire.begin(); will be changed
-
     h3lis.m_twi = m_twi;
     
-    if (readRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_WHO_AM_I) != 0x32) return false;
+    if (readRegister(H3LIS331DL_REG_ACCEL_WHO_AM_I) != 0x32) return false;
     
     // Set up the sensor for Accelerometer
     setupAccelerometer();
