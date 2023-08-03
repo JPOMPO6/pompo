@@ -1,5 +1,5 @@
 #include "H3LIS331DL.h"
-
+#include "nrf_delay.h"
 
 H3LIS331DL_t h3lis;
 
@@ -274,7 +274,7 @@ void setupAccelerometer(void)
     writeRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_CTRL_REG1, config1);
     
     // Wait for the configuration to complete
-    delay(h3lis.conversionDelay);
+    nrf_delay_ms(h3lis.conversionDelay);
     
     // Set Up the Configuration for the Accelerometer Control Register 4
     /*
@@ -299,7 +299,7 @@ void setupAccelerometer(void)
     writeRegister(h3lis.i2cAddress, H3LIS331DL_REG_ACCEL_CTRL_REG4, config4);
     
     // Wait for the configuration to complete
-    delay(h3lis.conversionDelay);
+    nrf_delay_ms(h3lis.conversionDelay);
 }
 
 /**************************************************************************/
