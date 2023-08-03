@@ -3,3 +3,8 @@
 *.d
 *.o
 *.asm
+*.ld
+*.ind
+*.map
+*.hex
+*.elf
