@@ -158,12 +158,6 @@ typedef enum
     
 } AccelerometerRange;
 
-typedef enum
-{
-    ACCEL_SPI_WIRE_4                = H3LIS331DL_REG_ACCEL_CTRL_REG4_SIM_4WIRE,
-    ACCEL_SPI_WIRE_3                = H3LIS331DL_REG_ACCEL_CTRL_REG4_SIM_3WIRE
-} AccelerometerSPIWire;
-
 typedef struct
 {
     int16_t X;
@@ -222,8 +216,6 @@ AccelerometerEndianData getAccelEndianData(void);
 void setAccelRange(AccelerometerRange accelRange);
 AccelerometerRange getAccelRange(void);
 
-void setAccelSPIWire(AccelerometerSPIWire spiWire);
-AccelerometerSPIWire getAccelSPIWire(void);
 
 extern H3LIS331DL_t h3lis;
 
