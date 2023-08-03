@@ -63,6 +63,19 @@ void twi_init (void)
 }
 
 
+void H3LIS331DL_Init(){
+    setAddr_H3LIS331DL(H3LIS331DL_DEFAULT_ADDRESS);
+
+    setAccelDataRate(ACCEL_DATARATE_50HZ);
+
+    setAccelRange(ACCEL_RANGE_100G);
+
+    H3LIS331DL_begin(&m_twi);
+
+    nrf_delay_ms(500);
+}
+
+
 /**
  * @brief Function for main application entry.
  */
