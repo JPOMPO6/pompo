@@ -162,7 +162,6 @@ typedef enum
 {
     ACCEL_SPI_WIRE_4                = H3LIS331DL_REG_ACCEL_CTRL_REG4_SIM_4WIRE,
     ACCEL_SPI_WIRE_3                = H3LIS331DL_REG_ACCEL_CTRL_REG4_SIM_3WIRE
-    
 } AccelerometerSPIWire;
 
 typedef struct
@@ -185,14 +184,14 @@ typedef struct H3LIS331DL_s
     AccelerometerEndianData endianData;
     AccelerometerRange accelRange;
     
-    nrf_drv_twi_t m_twi;
+    const nrf_drv_twi_t *m_twi;
 
     uint8_t i2cAddress;
     AccelerometerData accelData;
 } H3LIS331DL_t;
 
 H3LIS331DL_t setAddr_H3LIS331DL(uint8_t i2cAddress);
-bool H3LIS331DL_begin(nrf_drv_twi_t m_twi);
+bool H3LIS331DL_begin(const nrf_drv_twi_t *m_twi);
 void setupAccelerometer(void);
 void Measure_Accelerometer(void);
 

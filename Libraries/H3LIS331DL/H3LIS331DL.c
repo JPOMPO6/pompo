@@ -21,7 +21,7 @@ static void writeRegister(uint8_t i2cAddress, uint8_t reg, uint8_t value)
         Reads 8-bits to the specified destination register
 */
 /**************************************************************************/
-static uint8_t readRegister(uint8_t i2cAddress, uint8_t reg)
+static uint8_t readRegister(uint8_t reg)
 {
     Wire.beginTransmission(i2cAddress);
     i2cwrite((uint8_t)reg);
@@ -46,7 +46,7 @@ H3LIS331DL_t setAddr_H3LIS331DL(uint8_t i2cAddress)
         Sets up the Hardware, it requires a preinitialized TWI(I2C) driver object
 */
 /**************************************************************************/
-bool H3LIS331DL_begin(nrf_drv_twi_t m_twi)
+bool H3LIS331DL_begin(const nrf_drv_twi_t *m_twi)
 {
     // Wire.begin(); will be changed
 
