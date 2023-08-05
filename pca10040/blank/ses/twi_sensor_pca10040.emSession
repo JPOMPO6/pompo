@@ -16,6 +16,7 @@
   <ProjectSessionItem path="twi_sensor_pca10040;twi_sensor_pca10040;Application"/>
   <ProjectSessionItem path="twi_sensor_pca10040;twi_sensor_pca10040;Libraries"/>
   <ProjectSessionItem path="twi_sensor_pca10040;twi_sensor_pca10040;Libraries;H3LIS331DL"/>
+  <ProjectSessionItem path="twi_sensor_pca10040;twi_sensor_pca10040;Libraries;LSM6DSOTR"/>
  </Project>
  <Register1/>
  <Register2/>
@@ -40,8 +41,13 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="60" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../main.c" selected="1" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="23" y="216" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/H3LIS331DL/H3LIS331DL.c" selected="0" top="196" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="66" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../main.c" selected="0" top="63" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/LSM6DSOTR/lsm6dsox_reg.c" selected="0" top="21" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/LSM6DSOTR/lsm6dsox_reg.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="54" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/LSM6DSOTR/LSM6DSOX.h" selected="1" top="27" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="2" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/LSM6DSOTR/LSM6DSOX.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditRight" x="0" y="3" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/H3LIS331DL/H3LIS331DL.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditRight" x="0" y="200" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/H3LIS331DL/H3LIS331DL.h" selected="0" top="198" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="twi_sensor_pca10040" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/nRF5_SDK_17.1.0/nRF5_SDK_17.1.0_ddde560/examples/Workspace/twi_sensor/Libraries/H3LIS331DL" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="twi_sensor_pca10040" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/nRF5_SDK_17.1.0/nRF5_SDK_17.1.0_ddde560/examples/Workspace/twi_sensor/Libraries/LSM6DSOTR" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
