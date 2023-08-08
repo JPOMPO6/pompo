@@ -79,7 +79,7 @@ typedef struct {
 
 }LSM6DSOX_t;
 
-LSM6DSOXSensor_Init(const nrf_drv_twi_t *m_twi, uint8_t address); // address=LSM6DSOX_I2C_ADD_H as default
+LSM6DSOXStatusTypeDef LSM6DSOXSensor_Init(const nrf_drv_twi_t *m_twi, uint8_t address); // address=LSM6DSOX_I2C_ADD_H as default
 LSM6DSOXStatusTypeDef LSM6DSOX_begin();
 LSM6DSOXStatusTypeDef LSM6DSOX_end();
 LSM6DSOXStatusTypeDef LSM6DSOX_ReadID(uint8_t *Id);
@@ -198,7 +198,7 @@ LSM6DSOXStatusTypeDef LSM6DSOX_Set_G_ODR_When_Disabled(float Odr);
 static uint8_t LSM6DSOX_IO_Read(uint8_t* pBuffer, uint8_t RegisterAddr, uint16_t NumByteToRead);
 static uint8_t LSM6DSOX_IO_Write(uint8_t* pBuffer, uint8_t RegisterAddr, uint16_t NumByteToWrite);
 
-int32_t LSM6DSOX_io_write( void *handle, uint8_t WriteAddr, uint8_t *pBuffer, uint16_t nBytesToWrite );
-int32_t LSM6DSOX_io_read( void *handle, uint8_t ReadAddr, uint8_t *pBuffer, uint16_t nBytesToRead );
+int32_t LSM6DSOX_io_write(uint8_t WriteAddr, uint8_t *pBuffer, uint16_t nBytesToWrite );
+int32_t LSM6DSOX_io_read(uint8_t ReadAddr, uint8_t *pBuffer, uint16_t nBytesToRead );
 
 #endif /*_LSM6DSOX_H_*/

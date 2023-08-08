@@ -50,7 +50,7 @@ int32_t lsm6dsox_read_reg(lsm6dsox_ctx_t* ctx, uint8_t reg, uint8_t* data,
                           uint16_t len)
 {
   int32_t ret;
-  ret = ctx->read_reg(ctx->handle, reg, data, len);
+  ret = ctx->read_reg(reg, data, len);
   return ret;
 }
 
@@ -68,7 +68,7 @@ int32_t lsm6dsox_write_reg(lsm6dsox_ctx_t* ctx, uint8_t reg, uint8_t* data,
                            uint16_t len)
 {
   int32_t ret;
-  ret = ctx->write_reg(ctx->handle, reg, data, len);
+  ret = ctx->write_reg(reg, data, len);
   return ret;
 }
 

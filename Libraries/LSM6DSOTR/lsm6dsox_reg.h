@@ -136,8 +136,8 @@ typedef struct {
   *
   */
 
-typedef int32_t (*lsm6dsox_write_ptr)(void *, uint8_t, uint8_t *, uint16_t);
-typedef int32_t (*lsm6dsox_read_ptr)(void *, uint8_t, uint8_t *, uint16_t);
+typedef int32_t (*lsm6dsox_write_ptr)(uint8_t, uint8_t *, uint16_t);
+typedef int32_t (*lsm6dsox_read_ptr)(uint8_t, uint8_t *, uint16_t);
 
 typedef struct {
     /** Component mandatory fields **/
