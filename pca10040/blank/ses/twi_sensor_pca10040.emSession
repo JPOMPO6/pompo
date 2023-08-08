@@ -43,9 +43,12 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="37" y="22" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/LSM6DSOTR/LSM6DSOX.c" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="180" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/H3LIS331DL/H3LIS331DL.h" selected="1" top="126" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="2476" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/LSM6DSOTR/LSM6DSOX.c" selected="0" top="2443" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="180" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/H3LIS331DL/H3LIS331DL.h" selected="0" top="126" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="295" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/H3LIS331DL/H3LIS331DL.c" selected="0" top="262" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/LSM6DSOTR/LSM6DSOX.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="71" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/LSM6DSOTR/lsm6dsox_reg.h" selected="1" top="64" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="66" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../Libraries/LSM6DSOTR/lsm6dsox_reg.c" selected="0" top="1" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="twi_sensor_pca10040" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/nRF5_SDK_17.1.0/nRF5_SDK_17.1.0_ddde560/examples/Workspace/twi_sensor/Libraries/LSM6DSOTR" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
