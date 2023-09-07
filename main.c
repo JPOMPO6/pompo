@@ -107,9 +107,16 @@ void LSM6DSOXSENSOR_Init() {
  */
 int main(void) {
   printf("\r\nProgram started.");
+  
+  // INITIALIZE TWI(I2C) DRIVER
   twi_init();
+
+  // INITIALIZE LSM6DSO SENSOR
   LSM6DSOXSENSOR_Init();
+
+  // INITIALIZE H3LIS331DL SENSOR
   H3LIS331DL_Init();
+
   while (true) // MAIN TASK, INFINITE LOOP
   {
     nrf_delay_ms(500);
@@ -117,6 +124,9 @@ int main(void) {
     do {
       __WFE();
     } while (m_xfer_done == false);
+
+    // main task loop INSIDE here!
+
   }
 }
 
